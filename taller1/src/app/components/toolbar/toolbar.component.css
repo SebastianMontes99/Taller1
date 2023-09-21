@@ -2,25 +2,32 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333; /* Color de fondo del toolbar */
+    background-color: #3333336e; /* Color de fondo del toolbar */
     color: #fff; /* Color de texto del toolbar */
     padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
   /* Estilos para el lado derecho del toolbar (opciones de navegación) */
   .right {
     align-items: right;
     gap: 20px;
   }
-  
+
   .right a {
     text-decoration: none;
-    color: #fff; 
+    color: #ffffff;
     font-size: 18px;
     padding: 5px 10px;
-    transition: color 0.3s; 
+    transition: color 0.3s;
   }
-  
+
 
   .right a:hover {
-    color: #ff5722; 
+    color: #ff5722;
+  }
+  body {
+    margin-top: 64px; /* La altura del mat-toolbar en píxeles */
   }
