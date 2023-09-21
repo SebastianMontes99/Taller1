@@ -1,33 +1,29 @@
-.mat-toolbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3333336e; /* Color de fondo del toolbar */
-    color: #fff; /* Color de texto del toolbar */
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+.toolbar-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding-left: 150px;
+  padding-right:150px;
 }
-  /* Estilos para el lado derecho del toolbar (opciones de navegación) */
-  .right {
-    align-items: right;
-    gap: 20px;
-  }
 
-  .right a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    padding: 5px 10px;
-    transition: color 0.3s;
-  }
+.toolbar{
+  background-color: rgb(219, 219, 219);
+  color:rgb(139, 0, 0);
+  font-size: 30px;
+}
 
+.toolbar img{
+  width: 3%;
+}
+.buttons {
+  padding-left: 1200px;
+  display: flex;
+  gap: 10px; /* Espacio entre botones */
+}
 
-  .right a:hover {
-    color: #ff5722;
-  }
-  body {
-    margin-top: 64px; /* La altura del mat-toolbar en píxeles */
-  }
+.header-button {
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

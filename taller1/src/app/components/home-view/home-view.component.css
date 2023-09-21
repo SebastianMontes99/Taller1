@@ -1,57 +1,68 @@
-/* styles.css */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
-.cover-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+.contenedor {
+  background-color: #eff0f2; /* Color */
+  margin: 0 150px; /* Margen a la derecha e izquierda para dejar espacios en blanco */
+  height: calc(120vh - 40px); /* Altura del 100% del viewport (pantalla) menos los márgenes */
   display: flex;
-  align-items: center;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.contenedor-inner {
+  width: 100%; /* El contenedor interno ocupa el 100% del contenedor padre */
+  background-color: #acacac00; /* Color de fondo del contenedor cuadrado */
+}
+
+.imagen-seccion {
+  text-align: center; /* Centra horizontalmente el contenido */
+  height: 100%; /* La sección ocupa el 100% de la altura del contenedor interno */
+}
+
+.imagen-seccion img {
+  width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor (la sección) */
+  height: 100%; /* La imagen ocupa el 100% de la altura de su contenedor (la sección) */
+  object-fit: cover; /* Escala la imagen para llenar completamente su contenedor sin distorsión */
+}
+.galeria {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.indicadores {
+  display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
-.cover-image img {
-  width: 100%;
-  height: 100%;
-  opacity: 0.9;
+.indicadores span {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.overlay-text {
-  text-align: center;
-  color: rgb(255, 238, 6);
-  padding: 20px;
-  border-radius: 5px;
-  position: absolute;
+.indicadores span.activo {
+  background-color: #007bff; /* Cambia el color del indicador activo */
 }
 
-.overlay-text h1 {
-  font-family: cursive;
-  font-size: 60px;
-  margin: 0;
+.seccion1 {
+  padding-bottom: 200px;
 }
 
-.overlay-text h3 {
-  padding-top: 30px;
-  font-family: cursive;
-  font-size: 40px;
-  margin: 0;
+.body{
+  background-color: rgb(129, 129, 129);
 }
 
-/*RESPONSIVE*/
-@media (max-width: 768px) {
-  .overlay-text h1 {
-    font-size: 40px;
-  }
+h1{
+font-size: 20px;
+text-align: center;
+font-family:'Roboto Condensed', sans-serif;
+}
 
-  .overlay-text h3 {
-    font-size: 30px;
-    padding-top: 20px;
-  }
+.seccion0{
+  margin-bottom: 100px;
+  margin-top: -100px;
 }
