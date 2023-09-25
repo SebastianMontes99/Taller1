@@ -1,0 +1,109 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "name": "Your Name",
+      "photo": "https://m.media-amazon.com/images/M/MV5BNGYyNmI3M2YtNzYzZS00OTViLTkxYjAtZDIyZmE1Y2U1ZmQ2XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
+      "duration": "106",
+      "genres": "Drama, Romance, Fantasy"
+    },
+    {
+      "id": "3",
+      "name": "Weathering with You",
+      "photo": "https://m.media-amazon.com/images/M/MV5BMDhjOTcyODctZDIwMS00N2Q1LWE2YjQtMzVmMTkwMzM0NDA4XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
+      "duration": "112",
+      "genres": "Drama, Fantasy, Romance"
+    },
+    {
+      "id": "4",
+      "name": "My Hero Academia",
+      "photo": "https://images.justwatch.com/poster/261483319/s718/boku-no-hero-academia.jpg",
+      "duration": "96",
+      "genres": "Action, Comedy, Adventure"
+    },
+    {
+      "id": "5",
+      "name": "Demon Slayer",
+      "photo": "https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_.jpg",
+      "duration": "117",
+      "genres": "Action, Adventure, Fantasy"
+    },
+    {
+      "id": "8",
+      "name": "Attack on Titan",
+      "photo": "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/323c82257b2f6567fabbb7bd55bfa753.jpe",
+      "duration": "120",
+      "genres": "Action, Drama, Fantasy"
+    },
+    {
+      "id": "9",
+      "name": "Haikyuu!!",
+      "photo": "https",
+      "duration": "88",
+      "genres": "Sports, Comedy, Drama"
+    },
+    {
+      "id": "10",
+      "name": "Fate/stay night",
+      "photo": "https",
+      "duration": "120",
+      "genres": "Action, Drama, Fantasy"
+    },
+    {
+      "id": "11",
+      "name": "Detective Conan",
+      "photo": "https",
+      "duration": "104",
+      "genres": "Thriller, Mystery, Crime"
+    },
+    {
+      "id": "12",
+      "name": "Your Lie in April",
+      "photo": "https",
+      "duration": "122",
+      "genres": "Drama, Music, Romance"
+    },
+    {
+      "id": "13",
+      "name": "Hunter x Hunter",
+      "photo": "https",
+      "duration": "97",
+      "genres": "Action, Adventure, Fantasy"
+    },
+    {
+      "id": "14",
+      "name": "Naruto",
+      "photo": "https",
+      "duration": "112",
+      "genres": "Action, Adventure, Martial Arts"
+    },
+    {
+      "id": "15",
+      "name": "One Punch Man",
+      "photo": "https",
+      "duration": "85",
+      "genres": "Action, Comedy, Superhero"
+    },
+    {
+      "id": "16",
+      "name": "Kuroko's Basketball",
+      "photo": "https",
+      "duration": "91",
+      "genres": "Sports, Drama, Comedy"
+    },
+    {
+      "id": "17",
+      "name": "Fireworks",
+      "photo": "https",
+      "duration": "90",
+      "genres": "Drama, Romance, Fantasy"
+    },
+    {
+      "id": "18",
+      "name": "The Garden of Words",
+      "photo": "https",
+      "duration": "46",
+      "genres": "Drama, Romance"
+    }
+  ]
+}
