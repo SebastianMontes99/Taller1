@@ -17,7 +17,6 @@ import { MoviesTableComponent } from './components/movies-table/movies-table.com
   declarations: [
     AppComponent,
     ToolbarComponent,
-    models,
     MoviesTableComponent,
     HomeViewComponent
   ],
