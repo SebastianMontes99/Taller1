@@ -5,6 +5,21 @@
   padding-left: 150px;
   padding-right:150px;
 }
+  /* Estilos para el lado derecho del toolbar (opciones de navegación) */
+  .right {
+    align-items: right;
+    gap: 20px;
+    padding: 5px 10px;
+  }
+  
+  .right a {
+    text-decoration: none;
+    color: #fff; 
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: color 0.3s; 
+  }
+  
 
 .toolbar{
   background-color: rgb(219, 219, 219);
