@@ -12,7 +12,7 @@
 
   .mat-select-arrow {
     color: white;
-    
+
   }
 
   .mat-paginator-range-label {
@@ -21,7 +21,7 @@
 }
 .mat-header-row {
   background-color: #222;
-  
+
 }
 
 .mat-row:nth-of-type(odd) {
@@ -54,15 +54,29 @@
 
 .AddMovies {
   padding: 10px 20px;
-  background-color: #070157c3;
+  background-color: #9b0d0dc3;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .AddMovies:hover {
-  background-color: #070157c3;
+  background-color: #c24343c3;
 }
 .AddMovies:active {
-  background-color: #0611dc;
+  background-color: #ff6358;
+}
+.container{
+  background-color: #eff0f2; /* Color */
+  margin: 0 150px; /* Margen a la derecha e izquierda para dejar espacios en blanco */
+  height: calc(120vh - 40px); /* Altura del 100% del viewport (pantalla) menos los márgenes */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.inner-container{
+  padding-bottom: 400px;
+  width: 100%; /* El contenedor interno ocupa el 100% del contenedor padre */
+  background-color: #acacac00; /* Color de fondo del contenedor cuadrado */
 }

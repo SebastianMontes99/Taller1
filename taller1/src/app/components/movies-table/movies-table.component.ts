@@ -5,6 +5,9 @@ import {MatSort} from '@angular/material/sort'
 import { NgForm } from '@angular/forms';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Movie } from 'src/app/models/movie.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+
 @Component({
   selector: 'app-movies-table',
   templateUrl: './movies-table.component.html',
@@ -16,7 +19,7 @@ export class MoviesTableComponent {
 
   moviesForm!:NgForm;
   moviesData!:Movie;
-  showForm: boolean = false;
+  showForm: boolean = true;
 
   dataSource = new MatTableDataSource();
   movies_quantity:any
@@ -49,7 +52,7 @@ export class MoviesTableComponent {
         this.get_total_movies();
       }
       this.cancelEdit();
-      
+
     }
     else
     {
@@ -57,7 +60,7 @@ export class MoviesTableComponent {
     }
   }
 
-  constructor(private moviesService:MoviesService) {
+  constructor(private moviesService:MoviesService,private _snackBar: MatSnackBar) {
 
     this.moviesData = {} as Movie;
   }
@@ -66,7 +69,12 @@ export class MoviesTableComponent {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.getAllMovies();
-    
+
+  }
+
+  activeEdit(){
+    this.isEditMode=true;
+    this.showForm=true;
   }
 
   getAllMovies()
@@ -77,9 +85,9 @@ export class MoviesTableComponent {
     })
   }
 
-  editItem(element: any)
+  editItem(element: Movie)
   {
-    this.moviesData = { ...element };
+    this.moviesData = element;
   this.isEditMode = true;
   }
 
@@ -97,7 +105,7 @@ export class MoviesTableComponent {
       this.movies_quantity = this.dataSource.data.length;
     });
     console.log(this.dataSource.data)
-    alert("Pelicula eliminada con exito");
+    this.openSnackBar('Pelicula eliminada con exito','OK')
   }
 
   addMovie()
@@ -107,7 +115,7 @@ export class MoviesTableComponent {
       this.dataSource.data.push({...response});
       this.dataSource.data = this.dataSource.data.map((o: any)=> {return 0;});
     });
-    alert("Pelicula agregada con exito");
+    this.openSnackBar('Pelicula registrada con exito','OK')
   }
 
   updateMovie()
@@ -121,7 +129,7 @@ export class MoviesTableComponent {
       });
     });
     this.movies_quantity = this.dataSource.data.length;
-    alert("Pelicula actualizada con exito");
+    this.openSnackBar('Pelicula actualizada con exito','OK')
   }
 
   get_total_movies()
@@ -130,5 +138,13 @@ export class MoviesTableComponent {
   }
 
 
+  /**
+   * Abre la alerta de snackbar
+   * @param message Mensaje a mostrar
+   * @param action Acción
+   */
+  openSnackBar(message: string, action?: string) {
+    this._snackBar.open(message, action, { duration: 5_000 ,verticalPosition:'top',horizontalPosition:'end'});
+  }
 
 }

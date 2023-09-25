@@ -1,70 +1,74 @@
 
-<button class="AddMovies" color="warn" (click)="showForm = !showForm"> AddMovies </button>
+<div class="container">
+  <div class="inner-container">
+    <button class="AddMovies" color="warn" (click)="showForm = !showForm"> AddMovies </button>
 
-<div *ngIf="showForm">
-  <form (submit)="onSubmit()" #moviesForm='ngForm'>
+    <div *ngIf="showForm">
+      <form (submit)="onSubmit()" #moviesForm='ngForm'>
 
-    <mat-form-field><input matInput placeholder="name" name = "Name" required [(ngModel)]="moviesData.name"></mat-form-field>
-    <mat-form-field><input type="text" matInput placeholder="photo" name = "Photo" required [(ngModel)]="moviesData.photo"></mat-form-field>
-    <mat-form-field><input type="text" matInput placeholder="duration" name = "Duration" required [(ngModel)]="moviesData.duration"></mat-form-field>
-    <mat-form-field><input type="text" matInput placeholder="genres" name = "Genres" required [(ngModel)]="moviesData.genres"></mat-form-field>
-    <ng-container *ngIf="isEditMode; else elseTemplate">
-      <button mat-button color="primary" >Update</button>&nbsp;
-      <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
-    </ng-container>&nbsp;
+        <mat-form-field><input matInput placeholder="name" name = "Name" required [(ngModel)]="moviesData.name"></mat-form-field>
+        <mat-form-field><input type="text" matInput placeholder="photo" name = "Photo" required [(ngModel)]="moviesData.photo"></mat-form-field>
+        <mat-form-field><input type="text" matInput placeholder="duration" name = "Duration" required [(ngModel)]="moviesData.duration"></mat-form-field>
+        <mat-form-field><input type="text" matInput placeholder="genres" name = "Genres" required [(ngModel)]="moviesData.genres"></mat-form-field>
+        <ng-container *ngIf="isEditMode; else elseTemplate">
+          <button mat-button color="primary" >Update</button>&nbsp;
+          <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
+        </ng-container>&nbsp;
 
-    <ng-template #elseTemplate>
-      <button mat-button color="primary">Add</button>
-    </ng-template>
-    <button class="ListButton" (click)="get_total_movies()">Total de peliculas: {{movies_quantity}}</button>  
-  </form>
+        <ng-template #elseTemplate>
+          <button mat-button color="primary">Add</button>
+        </ng-template>
+        <button class="ListButton" (click)="get_total_movies()">Total de peliculas: {{movies_quantity}}</button>
+      </form>
+    </div>
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="photo">
+      <th mat-header-cell *matHeaderCellDef>Photo</th>
+      <td mat-cell *matCellDef="let element">
+        <img src={{element.photo}} alt="movie_image" width="100" height="100">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="duration">
+      <th mat-header-cell *matHeaderCellDef>Duration</th>
+      <td mat-cell *matCellDef="let element">{{element.duration}} min</td>
+    </ng-container>
+
+    <ng-container matColumnDef="genres">
+      <th mat-header-cell *matHeaderCellDef>Genres</th>
+      <td mat-cell *matCellDef="let element"> {{element.genres}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <a mat-raised-button color="primary"(click)="editItem(element)">
+          <mat-icon>edit</mat-icon>
+        </a>
+        &nbsp;
+        <a mat-raised-button color="warn"(click)="deleteItem(element.id)">
+          <mat-icon>delete</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons aria-label="Select page"></mat-paginator>
 </div>
-
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-  <!-- Id Column -->
-<ng-container matColumnDef="id">
-  <th mat-header-cell *matHeaderCellDef>ID</th>
-  <td mat-cell *matCellDef="let element">{{element.id}} </td>
-</ng-container>
-
-<ng-container matColumnDef="name">
-  <th mat-header-cell *matHeaderCellDef>Name</th>
-  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-</ng-container>
-
-<ng-container matColumnDef="photo">
-  <th mat-header-cell *matHeaderCellDef>Photo</th>
-  <td mat-cell *matCellDef="let element">
-    <img src={{element.photo}} alt="movie_image" width="100" height="100">
-  </td>
-</ng-container>
-
-<ng-container matColumnDef="duration">
-  <th mat-header-cell *matHeaderCellDef>Duration</th>
-  <td mat-cell *matCellDef="let element">{{element.duration}} min</td>
-</ng-container>
-
-<ng-container matColumnDef="genres">
-  <th mat-header-cell *matHeaderCellDef>Genres</th>
-  <td mat-cell *matCellDef="let element"> {{element.genres}} </td>
-</ng-container>
-
-<ng-container matColumnDef="actions">
-  <th mat-header-cell *matHeaderCellDef>Actions</th>
-  <td mat-cell *matCellDef="let element">
-    <a mat-raised-button color="primary"(click)="editItem(element)">
-      <mat-icon>edit</mat-icon>
-    </a>
-    &nbsp; 
-    <a mat-raised-button color="warn"(click)="deleteItem(element.id)">
-      <mat-icon>delete</mat-icon>
-    </a>
-  </td>
-</ng-container>
-<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-<mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons aria-label="Select page"></mat-paginator>
+</div>

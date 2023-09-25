@@ -1,27 +1,6 @@
 {
   "movies": [
     {
-      "id": "1",
-      "name": "Your Name",
-      "photo": "https://m.media-amazon.com/images/M/MV5BNGYyNmI3M2YtNzYzZS00OTViLTkxYjAtZDIyZmE1Y2U1ZmQ2XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-      "duration": "106",
-      "genres": "Drama, Romance, Fantasy"
-    },
-    {
-      "id": "3",
-      "name": "Weathering with You",
-      "photo": "https://m.media-amazon.com/images/M/MV5BMDhjOTcyODctZDIwMS00N2Q1LWE2YjQtMzVmMTkwMzM0NDA4XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
-      "duration": "112",
-      "genres": "Drama, Fantasy, Romance"
-    },
-    {
-      "id": "4",
-      "name": "My Hero Academia",
-      "photo": "https://images.justwatch.com/poster/261483319/s718/boku-no-hero-academia.jpg",
-      "duration": "96",
-      "genres": "Action, Comedy, Adventure"
-    },
-    {
       "id": "5",
       "name": "Demon Slayer",
       "photo": "https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_.jpg",

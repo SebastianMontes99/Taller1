@@ -12,6 +12,7 @@ import { MatChipsModule} from "@angular/material/chips";
 import { MatGridListModule} from "@angular/material/grid-list";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MatListModule } from '@angular/material/list';
     MatChipsModule,
     MatGridListModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -43,7 +45,8 @@ import { MatListModule } from '@angular/material/list';
     MatChipsModule,
     MatGridListModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ],
 
 })
