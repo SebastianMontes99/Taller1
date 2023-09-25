@@ -1,10 +1,9 @@
-.mat-toolbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333; /* Color de fondo del toolbar */
-    color: #fff; /* Color de texto del toolbar */
-    padding: 10px 20px;
+.toolbar-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding-left: 150px;
+  padding-right:150px;
 }
   /* Estilos para el lado derecho del toolbar (opciones de navegación) */
   .right {
@@ -22,6 +21,24 @@
   }
   
 
-  .right a:hover {
-    color: #ff5722; 
-  }
+.toolbar{
+  background-color: rgb(219, 219, 219);
+  color:rgb(139, 0, 0);
+  font-size: 30px;
+}
+
+.toolbar img{
+  width: 3%;
+}
+.buttons {
+  padding-left: 1200px;
+  display: flex;
+  gap: 10px; /* Espacio entre botones */
+}
+
+.header-button {
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

@@ -12,12 +12,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HomeViewComponent } from './components/home-view/home-view.component';
 import { MoviesTableComponent } from './components/movies-table/movies-table.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
+    models,
     MoviesTableComponent,
-    HomeViewComponent,
+    HomeViewComponent
   ],
   imports: [
     MatIconModule,
